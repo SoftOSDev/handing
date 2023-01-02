@@ -1,17 +1,15 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <link href="picture/favoricon.ico" rel="shortcut icon">
-        <title>Handing</title>
-    </head>
-    <body>
-        <link rel="stylesheet" type="text/css" href="resource/main.css" title="style">
+<head>
+<link href="picture/favoricon.ico" rel="shortcut icon">
+<title>Handing</title>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="resource/main.css" title="style">
 <script scr="resource/main.js"></script>
-        <!-- body background="picture/hacker.jpg"></body--><div class='container'>
-        <div class="header">
-  <h2>Handing</h2>
+<div class="header">
+<h2>Handing</h2>
 </div>
-        <!-- <p><a href="download/">下载 <a href="https://blog.csdn.net">博客 <a href="docs/">文档 <a href="special/">专题 <a href="music/">音乐 <a href="chromedino/">chrome恐龙</a></a></a></a></a></a></p> -->
 <div class="topnav">
 <a href="software/">软件</a>
 <a href="system/">系统</a>
@@ -20,126 +18,257 @@
 <a href="programming/">尝试</a>
 <a href="home/">主页</a>
 </div><br>
-    <div class="slideshow-container">
-        <div class="mySlides fade" style="display: none;">
-            <img src="picture/p1.jpg" width=1000 height=500>
-        </div>
-        <div class="mySlides fade" style="display: block;">
-            <img src="picture/p2.jpg" width=1000 height=500>
-        </div>
-        <div class="mySlides fade" style="display: none;">
-            <img src="picture/p3.jpg" width=1000 height=500>
-        </div>
-    </div>
-    <br>
-    <div style="text-align:center">
-        <span class="dot"></span>
-        <span class="dot active"></span>
-        <span class="dot"></span>
-    </div>
-    <style>
-        * {box-sizing:border-box}
-        body {font-family: Verdana,sans-serif;}
-        .mySlides {display:none}
-        .slideshow-container {
-          max-width: 1000px;
-          position: relative;
-          margin: auto;
-        }
+<div class="slideshow-container">
+<div class="mySlides fade" style="display: none;">
+<img src="picture/p1.jpg" width=1000 height=500>
+</div>
+<div class="mySlides fade" style="display: block;">
+<img src="picture/p2.jpg" width=1000 height=500>
+</div>
+<div class="mySlides fade" style="display: none;">
+<img src="picture/p3.jpg" width=1000 height=500>
+</div>
+</div>
+<br>
+<div style="text-align:center">
+<span class="dot"></span>
+<span class="dot active"></span>
+<span class="dot"></span>
+</div>
+<style>
+
+* {box-sizing:border-box}
+
+.mySlides {display:none}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
  
-        .prev, .next {
-          cursor: pointer;
-          position: absolute;
-          top: 50%;
-          width: auto;
-          margin-top: -22px;
-          padding: 16px;
-          color: white;
-          font-weight: bold;
-          font-size: 18px;
-          transition: 0.6s ease;
-          border-radius: 0 3px 3px 0;
-        }
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
     
-        .next {
-          right: 0;
-          border-radius: 3px 0 0 3px;
-        }
+.next {
+   right: 0;
+   border-radius: 3px 0 0 3px;
+}
         
-        .prev:hover, .next:hover {
-          background-color: rgba(0,0,0,0.8);
-        }
+.prev:hover, .next:hover {
+   background-color: rgba(0,0,0,0.8);
+}
         
-        .dot {
-          cursor:pointer;
-          height: 13px;
-          width: 13px;
-          margin: 0 2px;
-          background-color: #bbb;
-          border-radius: 50%;
-          display: inline-block;
-          transition: background-color 0.6s ease;
-        }
+.dot {
+   cursor:pointer;
+   height: 13px;
+   width: 13px;
+   margin: 0 2px;
+   background-color: #bbb;
+   border-radius: 50%;
+   display: inline-block;
+   transition: background-color 0.6s ease;
+}
         
-        .active, .dot:hover {
-          background-color: #717171;
-        }
+.active, .dot:hover {
+    background-color: #717171;
+}
 
-        .fade {
-          -webkit-animation-name: fade;
-          -webkit-animation-duration: 1.5s;
-          animation-name: fade;
-          animation-duration: 1.5s;
-        }
+.fade {
+     -webkit-animation-name: fade;
+     -webkit-animation-duration: 1.5s;
+     animation-name: fade;
+     animation-duration: 1.5s;
+}
         
-        @-webkit-keyframes fade {
-          from {opacity: .4} 
-          to {opacity: 1}
-        }
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
         
-        @keyframes fade {
-          from {opacity: .4} 
-          to {opacity: 1}
-        }
-    </style>
+@keyframes fade {
+   from {opacity: .4} 
+   to {opacity: 1}
+}
 
-    <script>
-        var slideIndex = 0;
-        showSlides();
-        
-        function showSlides() {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-               slides[i].style.display = "none";  
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " active";
-            setTimeout(showSlides, 2000); 
-        }
-    </script><br><br><br><br>
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+</style>
+<script>
+var slideIndex = 0;
+showSlides();    
+function showSlides() {
+   var i;
+   var slides = document.getElementsByClassName("mySlides");
+   var dots = document.getElementsByClassName("dot");
+   for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+   }
+   slideIndex++;
+   if (slideIndex > slides.length) {slideIndex = 1}    
+   for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+   }
+   slides[slideIndex-1].style.display = "block";  
+   dots[slideIndex-1].className += " active";
+   setTimeout(showSlides, 2000); 
+}
+</script><br><br><br><br>
 <div class="hr0"></div>
 <br><br>
+<div id="products">
 <h3>我们的产品</h3><br><br>
-<img src="picture/macdock.jpg"  alt="MacDock"  /> <br><br>
-<img src="picture/slz.jpg"  alt="Windows Loading"  /> <br><br>
-<img src="picture/crtl.jpg"  alt="Chicken and Rabbit Tong Long"  /> <br><br>
-<img src="picture/zxsq.jpg"  alt="Zhuang X Sheng Qi"  /> <br><br>
-<img src="picture/cppidle.jpg"  alt="Cpp-IDLE"  /> <br><br>
-<img src="picture/p2p.jpg"  alt="P2P-Download"  /> <br><br>
-        <img src="picture/favoricon.ico"  alt="Handing" width="219" height="170" /> 
+<img id="myImg" src="picture/macdock.jpg"  alt="MacDock"  /> <br><br>
+<img id="myImg1" src="picture/slz.jpg"  alt="七龙珠"  /> <br><br>
+<img id="myImg2" src="picture/crtl.jpg"  alt="鸡兔同笼"  /> <br><br>
+<img id="myImg3" src="picture/zxsq.jpg"  alt="装X神器"  /> <br><br>
+<img id="myImg4" src="picture/cppidle.jpg"  alt="Cpp-IDLE"  /> <br><br>
+<img id="myImg5" src="picture/p2p.jpg"  alt="P2P-Download"  /> <br><br>
+<br><br><img src="picture/favoricon.ico"  alt="Handing" width="219" height="170" /> 
 <br><br><br>
-
-
+</div>
+<div id="myModal" class="modal">
+<span class="close">&times;</span>
+<img class="modal-content" id="img01">
+<div id="caption"></div>
+</div>
+<script>
+var modal = document.getElementById("myModal");
+var img = document.getElementById("myImg");
+var img1 = document.getElementById("myImg1");
+var img2 = document.getElementById("myImg2");
+var img3 = document.getElementById("myImg3");
+var img4 = document.getElementById("myImg4");
+var img5 = document.getElementById("myImg5");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+img1.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+img2.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+img3.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+img4.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+img5.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
 <div class="footer">
-  <h3><a href="https://github.com/SoftOSDev"><img src="https://github.githubassets.com/pinned-octocat.svg"  alt="Github" width="50" height="50" /> </a><a href="https://facebook.com/SoftOSDev"><img src="https://i1.wp.com/christcentergj.com/wp-content/uploads/2015/04/facebook-logo-png.png?ssl=1"  alt="Facebook" width="50" height="50" /> </a><a href="https://twitter.com/hxh7197"><img src="https://ts1.cn.mm.bing.net/th/id/R-C.3f7189662f19f8318fc75252deee723a?rik=Qa956Np1tp8Zcg&riu=http%3a%2f%2f1000logos.net%2fwp-content%2fuploads%2f2017%2f06%2fTwitter-Logo.png&ehk=6ekNd2ZmhpvFDGRZF19QcumP9fb8pZRkwrbFbK%2bpULA%3d&risl=&pid=ImgRaw&r=0"  alt="Twitter" width="50" height="50" /> </a></h3>
-<a href="/"><p><font color="blue">Handing Co.,lnc 2022</p></a>
+<h3><a href="https://github.com/SoftOSDev"><img src="https://github.githubassets.com/pinned-octocat.svg"  alt="Github" width="50" height="50" /> </a><a href="https://facebook.com/SoftOSDev"><img src="https://i1.wp.com/christcentergj.com/wp-content/uploads/2015/04/facebook-logo-png.png?ssl=1"  alt="Facebook" width="50" height="50" /> </a><a href="https://twitter.com/hxh7197"><img src="https://ts1.cn.mm.bing.net/th/id/R-C.3f7189662f19f8318fc75252deee723a?rik=Qa956Np1tp8Zcg&riu=http%3a%2f%2f1000logos.net%2fwp-content%2fuploads%2f2017%2f06%2fTwitter-Logo.png&ehk=6ekNd2ZmhpvFDGRZF19QcumP9fb8pZRkwrbFbK%2bpULA%3d&risl=&pid=ImgRaw&r=0"  alt="Twitter" width="50" height="50" /> </a></h3>
+<a href="/"><p><font color="blue">Copyright © 2022-2023 Handing Co.,lnc</p></a>
 </div> </div>
-    </body>
+</body>
 </html>
