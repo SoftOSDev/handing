@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link href="../../picture/favoricon.ico"rel="shortcut icon">
+<title>代码雨 - Xihao Hua</title>
+<link rel="stylesheet" href="https://softosdev.github.io/prism/prism.css">
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<style>
+.topnav {background-color: #333;}
+.topnav a {float: none;display:inline-block;color: #f2f2f2;text-align: center;padding: 14px 16px;text-decoration: none;}
+a:hover {background-color: #ddd;color: black;} 
+body{background: url("../../picture/wallpapper.gif");}
+</style>
+</head>
+<body>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div class="topnav"><a href="../"><返回</a></div>
+<div id="title" style="text-align:center;">
+<h1><font color="white">代码雨</font></h1>
+</div>
+<p><font color="white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;代码雨由N列“代码”组成，每列“代码”由于M个代码组成，每个“代码”看作一个对象，它有四个属性，分别是：x坐标、y坐标、速度、内容。
+各列的速度和初始位置不一样才会有错落有致的感觉，但每列中的每个“代码”的速度却要一样。<br></font></p>
+<pre>
+<code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+#include &lt;Windows.h&gt;
+
+typedef struct{
+	int x, y;
+	char ch;
+}RAINDROP;
+ 
+const int BUFFER_SIZE = 50;
+int WIDTH = 80;
+int HEIGHT = 30;
+const int RAIN_LENGTH = 18;
+ 
+RAINDROP raindropLine[BUFFER_SIZE]; 
+HANDLE HOUT = GetStdHandle(STD_OUTPUT_HANDLE);
+void gotoxy(int x, int y){
+	COORD pos;	
+	pos.X = x;
+	pos.Y = y;
+	SetConsoleCursorPosition(HOUT, pos);
+}
+ 
+void show_cursor(BOOL hide){
+	CONSOLE_CURSOR_INFO cciCursor;
+	if (GetConsoleCursorInfo(HOUT, &amp;cciCursor))
+	{
+		cciCursor.bVisible = hide;				
+		SetConsoleCursorInfo(HOUT, &amp;cciCursor);	
+	}
+}
+ 
+void set_color(int color){
+	SetConsoleTextAttribute(HOUT, color);		
+}
+ 
+int main(){
+	CONSOLE_SCREEN_BUFFER_INFO info;
+	GetConsoleScreenBufferInfo(HOUT, &amp;info);	
+	HEIGHT = info.srWindow.Bottom;			
+	WIDTH = info.srWindow.Right;
+	
+	show_cursor(FALSE);
+	srand((unsigned int)time(NULL));
+	for (int i=0; i&lt;BUFFER_SIZE; i++){
+		raindropLine[i].x = rand()%WIDTH;
+		raindropLine[i].y = rand()%HEIGHT;
+		raindropLine[i].ch = ' '+i+rand() %2;		
+	}
+	
+	while(true){
+		GetConsoleScreenBufferInfo(HOUT, &amp;info);	
+		HEIGHT = info.srWindow.Bottom;
+		WIDTH = info.srWindow.Right;
+		for (int i=0; i&lt;BUFFER_SIZE; ++i)
+		{
+			if (raindropLine[i].y &lt;= HEIGHT)
+			{
+				gotoxy(raindropLine[i].x, raindropLine[i].y);
+				set_color(FOREGROUND_GREEN);	
+				putchar(raindropLine[i].ch);
+			}
+			gotoxy(raindropLine[i].x, raindropLine[i].y - RAIN_LENGTH);
+			putchar(' ');
+			raindropLine[i].y++;
+			raindropLine[i].ch = ' '+i+rand() %2;
+			if (raindropLine[i].y &gt; HEIGHT + RAIN_LENGTH)		
+			{
+				raindropLine[i].x = rand() % WIDTH;
+				raindropLine[i].y = rand() % HEIGHT;
+			}
+			if ( raindropLine[i].y &lt;= HEIGHT)
+			{
+				gotoxy(raindropLine[i].x, raindropLine[i].y);
+				set_color(FOREGROUND_GREEN|FOREGROUND_INTENSITY);	
+				putchar(raindropLine[i].ch);
+			}
+		}
+		Sleep(30);
+	}
+	getchar();
+	return 0;
+}</code>
+</pre>
+<br><div id="gitalk-container"></div>
+<script src="https://softosdev.github.io/prism/prism.js"></script>
+<script>
+var gitalk = new Gitalk({
+        clientID: '92ebe0dd8503eafaecc3',
+        clientSecret: '244b7b9c27590b6f850d7f4d9d5048482b6698d1',
+        repo: 'gittalk',
+        owner: 'SoftOSDev',
+        admin: ['SoftOSDev', 'Xihao-Hua'],
+        id: location.pathname,
+        distractionFreeMode: true
+      });
+      gitalk.render('gitalk-container');
+
+      var language = navigator.language || navigator.userLanguage;
+      var intro = document.getElementsByClassName('hero-intro')[0];
+      var beginBtn = document.getElementsByClassName('btn-begin')[0];
+      var demo = document.getElementsByClassName('demo')[0];
+      if (language === 'zh-TW') {
+        intro.innerText = '一個基於 Github Issue 和 Preact 開發的評論插件';
+        beginBtn.innerText = '開始使用';
+      } else if (!~language.indexOf('zh')) {
+        intro.innerText = 'A modern comment component based on Github Issue and Preact';
+        beginBtn.innerText = 'GET STARTED';
+        demo.innerText = '';
+}
+</script>
+
+</body>
+</html>
