@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link href="../../picture/favoricon.ico"rel="shortcut icon">
+<title>3D“甜甜圈” - Xihao Hua</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SoftOSDev/prism/prism.css">
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<style>
+.topnav {background-color: #333;}
+.topnav a {float: none;display:inline-block;color: #f2f2f2;text-align: center;padding: 14px 16px;text-decoration: none;}
+a:hover {background-color: #ddd;color: black;} 
+body{background: url("https://uploads.strikinglycdn.com/files/93c1e392-9578-4140-a302-e230d11a6b76/wallpapper.gif?t=1673083693?id=3974655");}
+</style>
+</head>
+<body>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div class="topnav"><a href="../"><返回</a></div>
+<div id="title" style="text-align:center;">
+<h1><font color="white">3D“甜甜圈”</font></h1>
+</div>
+<p><font color="white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用这个例子，复习一下C++吧，这是一款学习机器人编程必不可缺的重要语言！<br></font></p>
+<pre>
+<code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+#include &lt;ctime&gt;
+#include &lt;windows.h&gt;
+
+using namespace std;
+
+int head,leg;                               //头和腿
+int tmp;                                        //临时
+int chicken,rabbit;                        //鸡和兔
+int in;                                           //输入
+
+void taxin(){                                   //贪心算法
+    tmp=leg-(2*head);                   //使用假设发求鸡和兔的数量
+    rabbit=tmp/2;
+    chicken=head-rabbit;
+}
+
+void qiongju(){                               //穷举算法
+    srand(time(0));                          //产生随机数
+    if(head==leg/2){                     //如果头的数量是腿的2倍
+        chicken=head;                     //那么鸡的数量就是头的数量（因为鸡有2条腿）
+        rabbit=0;                              //兔子就是0个
+    }
+    else if(head==leg/4){              //如果头的数量是退的4倍
+        chicken=0;                            //鸡就是0个
+        rabbit=head;                        //兔的数量就是头的数量（因为兔有4条腿）
+    }
+    else{
+        while(true){                            //重复执行
+            chicken=rand() % 1000;      //鸡的数量在1000以内取随机数
+            rabbit=rand() % 1000;        //兔的数量也在1000以内取随机数
+            if((chicken*2+rabbit*4==leg)&amp;&amp;(chicken+rabbit==head)){ 
+            //如果鸡乘2的数量加兔乘2的数量等于腿的数量（因为鸡有2条腿，兔有4条腿）且鸡的数量加兔的数量等于头的数量
+                break;                            //跳出循环
+            }
+        }
+    }
+}
+
+int main(){
+    cout&lt;&lt;"头的数量+空格+腿的数量：";
+    cin&gt;&gt;head&gt;&gt;leg;                      //输入头和腿
+    cout&lt;&lt;"1.贪心算法 2.穷举算法：";
+    cin&gt;&gt;in;
+    if(in==1)
+        taxin();
+    if(in==2)
+        qiongju();
+    cout&lt;&lt;"\n鸡的数量:"&lt;&lt;chicken&lt;&lt;"\n";      //输出
+    cout&lt;&lt;"兔的数量:"&lt;&lt;rabbit&lt;&lt;'\n';
+    system("pause");                   //暂停
+}</code>
+</pre>
+<br><div id="gitalk-container" style="width:100%;background-color:#f1f1f0;"></div>
+<script src="https://cdn.jsdelivr.net/gh/SoftOSDev/prism/prism.js"></script>
+<script>
+var gitalk = new Gitalk({
+        clientID: 'f9c47400d6592a2167da',
+        clientSecret: '6c2dffbf7a912d81e375715aefedfffd5c1eb10a',
+        repo: 'handing',
+        owner: 'SoftOSDev',
+        admin: ['SoftOSDev', 'Xihao-Hua'],
+        id: location.pathname,
+        distractionFreeMode: true
+      });
+      gitalk.render('gitalk-container');
+
+      var language = navigator.language || navigator.userLanguage;
+      var intro = document.getElementsByClassName('hero-intro')[0];
+      var beginBtn = document.getElementsByClassName('btn-begin')[0];
+      var demo = document.getElementsByClassName('demo')[0];
+      if (language === 'zh-TW') {
+        intro.innerText = '一個基於 Github Issue 和 Preact 開發的評論插件';
+        beginBtn.innerText = '開始使用';
+      } else if (!~language.indexOf('zh')) {
+        intro.innerText = 'A modern comment component based on Github Issue and Preact';
+        beginBtn.innerText = 'GET STARTED';
+        demo.innerText = '';
+}
+</script>
+
+</body>
+</html>
