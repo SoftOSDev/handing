@@ -39,7 +39,8 @@ height:40px;
       "Community",
       "尝试",
       "Try",
-      "Programming"
+      "Programming",
+      "ChatGPT"
     ];
     $( "#tags" ).autocomplete({
       source: availableTags
@@ -71,6 +72,9 @@ var s=document.getElementById("tags").value;
     else if((s=="Open Source")||(s=="开源")){
 	window.location.replace("/open-source");
     }
+    else if(s=="ChatGPT"){
+	window.location.replace("/chat");
+    }
 else{
 var tips="找不到“";
 tips += s;
@@ -86,6 +90,7 @@ layer.alert(tips);
 <a href="community/">社区</a>
 <a href="programming/">尝试</a>
 <a href="home/">主页</a>
+<a href="chat/">ChatGPT</a>
 </div><br>
 <div class="slideshow-container">
 <div class="mySlides fade" style="display: none;">
