@@ -1,0 +1,28 @@
+body{background-color:#f1f1f0;
+    font-size:px2rem(40);
+    font-family:qj;}
+p{color:rgb(230, 76, 102);text-align:center;}
+h2{color:orange;text-align:center;}
+h3{color:rgb(219, 83, 190);text-align:center;}
+a{color:green;text-align:center;}
+button{color:red;text-align:center;}
+* {box-sizing: border-box;}
+body {margin: 0;}div{text-align:center;}
+.container{min-height: 100%;height: auto !important;height: 100%;margin: 0 auto -60px;}
+.header {background-color: #dbdbdb;padding: 20px;text-align: center;}
+.topnav {background-color: #333;}
+.topnav a {float: none;display:inline-block;color: #f2f2f2;text-align: center;padding: 14px 16px;text-decoration: none;}
+a:hover {background-color: #ddd;color: black;}.column {float: left;padding: 10px;}
+.column.side {width: 25%;}
+.column.middle {width: 50%;}
+.row:after {content: "";display: table;clear: both;}@media screen and (max-width: 600px) {.column.side, .column.middle {width: 100%;}}.push,
+.footer {background-color: #dbdbdb;padding: 30px;text-align: center;clear:both;}
+a:link {text-decoration:none;}a:visited {text-decoration:none;}
+a:hover {text-decoration:none;}a:active {text-decoration:none;}
+.button{background-color: #4CAF50;border: none;color: white;padding: 16px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;-webkit-transition-duration: 0.4s; transition-duration: 0.4s;cursor: pointer;}
+.button1 {background-color: white;color: black;border: 2px solid #4CAF50;}
+.button1:hover{background-color: #4CAF50;color: white;}
+.button1 {border-radius: 4px;}container{width: 550px; height: 400px; margin: 0 auto;background-color:#f1f1f0;}
+.button2:hover {box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);}
+.button2 {border-radius: 4px;}
+.hr0{ height:1px;border:none;border-top:1px dashed #1E90FF;} 

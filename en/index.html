@@ -27,6 +27,12 @@ p input{
 width:100px;
 height:40px;
 }
+@font-face {
+    font-family: "qj"; 
+    src:url("qj.ttf"); 
+    font-weight: normal;
+    font-style: normal;
+}
 </style>
 <script>
   $(function() {
@@ -52,35 +58,35 @@ height:40px;
   });
 
   </script>
-<div class="header"><a href="en/" id="lan"><button class="button2">EN</button></a><br><div id="search"><p><input id="tags" type="text" placeholder=" 搜索..."> <button class="button1" onclick="search()">搜索</button></p></div>
-<h2>Handing</h2>
+<div class="header"><a href="../" id="lan"><button class="button2">中文</button></a><br><div id="search"><p><input id="tags" type="text" placeholder=" Search..."> <button class="button1" onclick="search()">Search</button></p></div>
+<b><h2>Handing</h2></b>
 </div>
 <script>
 function search(){
 var s=document.getElementById("tags").value;
     if((s=="Home")||(s=="主页")){
-	window.location.replace("/home");
+	window.location.replace("home");
     }
     else if((s=="Software")||(s=="软件")){
-	window.location.replace("/software");
+	window.location.replace("software");
     }
     else if((s=="System")||(s=="系统")){
-	window.location.replace("/system");
+	window.location.replace("system");
     }
     else if((s=="Try")||(s=="Programming")||(s=="尝试")){
-	window.location.replace("/programming");
+	window.location.replace("programming");
     }
     else if((s=="Community")||(s=="社区")){
-	window.location.replace("/community");
+	window.location.replace("community");
     }
     else if((s=="Open Source")||(s=="开源")){
-	window.location.replace("/open-source");
+	window.location.replace("open-source");
     }
     else if(s=="ChatGPT"){
-	window.location.replace("/chat");
+	window.location.replace("chat");
     }
 else{
-var tips="找不到“";
+var tips="Can't find “";
 tips += s;
 tips += "”！";
 layer.alert(tips);
@@ -88,12 +94,12 @@ layer.alert(tips);
 }
 </script>
 <div class="topnav">
-<a href="software/">软件</a>
-<a href="system/">系统</a>
-<a href="open-source/">开源</a>
-<a href="community/">社区</a>
-<a href="programming/">尝试</a>
-<a href="home/">主页</a>
+<a href="software/">SoftWare</a>
+<a href="system/">System</a>
+<a href="open-source/">Open-Source</a>
+<a href="community/">Community</a>
+<a href="programming/">Programming</a>
+<a href="home/">Home</a>
 </div><br>
 <div class="slideshow-container">
 <div class="mySlides fade" style="display: none;">
@@ -289,11 +295,11 @@ function showSlides() {
 <div class="hr0"></div>
 <br><br>
 <div id="products">
-<h3>我们的产品</h3><br><br>
+<h3>Our products</h3><br><br>
 <img id="myImg" src="picture/macdock.jpg"  alt="MacDock"  /> <br><br>
-<img id="myImg1" src="picture/slz.jpg"  alt="七龙珠"  /> <br><br>
-<img id="myImg2" src="picture/crtl.jpg"  alt="鸡兔同笼"  /> <br><br>
-<img id="myImg3" src="picture/zxsq.jpg"  alt="装X神器"  /> <br><br>
+<img id="myImg1" src="picture/slz.jpg"  alt="Dragon Ball"  /> <br><br>
+<img id="myImg2" src="picture/crtl.jpg"  alt="Chickens and rabbits in the same cage"  /> <br><br>
+<img id="myImg3" src="picture/zxsq.jpg"  alt="Pretend to be an artifact"  /> <br><br>
 <img id="myImg4" src="picture/cppidle.jpg"  alt="Cpp-IDLE"  /> <br><br>
 <img id="myImg5" src="picture/p2p.jpg"  alt="P2P-Download"  /> <br><br>
 <br><br><img src="picture/favoricon.png"  alt="Handing" width="219" height="170" /> 

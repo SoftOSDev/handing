@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link href="../../picture/favoricon.ico"rel="shortcut icon">
+<title>3D“甜甜圈” - Xihao Hua</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SoftOSDev/prism/prism.css">
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<style>
+.topnav {background-color: #333;}
+.topnav a {float: none;display:inline-block;color: #f2f2f2;text-align: center;padding: 14px 16px;text-decoration: none;}
+a:hover {background-color: #ddd;color: black;} 
+body{background: url("https://uploads.strikinglycdn.com/files/93c1e392-9578-4140-a302-e230d11a6b76/wallpapper.gif?t=1673083693?id=3974655");}
+</style>
+</head>
+<body>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div class="topnav"><a href="../"><返回</a></div>
+<div id="title" style="text-align:center;">
+<h1><font color="white">3D“甜甜圈”</font></h1>
+</div>
+<p><font color="white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用这个例子，复习一下C++吧，这是一款学习机器人编程必不可缺的重要语言！<br></font></p>
+<pre>
+<code class="language-cpp">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+#include &lt;cstring&gt;
+#include &lt;Windows.h&gt;
+ 
+void usleep(__int64 usec)
+{
+    HANDLE timer;
+    LARGE_INTEGER ft;
+ 
+    ft.QuadPart = -(10 * usec); 
+ 
+    timer = CreateWaitableTimer(NULL, TRUE, NULL);
+    SetWaitableTimer(timer, &amp;ft, 0, NULL, NULL, 0);
+    WaitForSingleObject(timer, INFINITE);
+    CloseHandle(timer);
+}
+ 
+int main() {
+    float A = 0, B = 0;
+    float i, j;
+    int k;
+    float z[1760];
+    char b[1760];
+    printf("\x1b[2J");
+    for (;;) {
+        memset(b, 32, 1760);
+        memset(z, 0, 7040);
+        for (j = 0; j &lt; 6.28; j += 0.07) {
+            for (i = 0; i &lt; 6.28; i += 0.02) {
+                float c = sin(i);
+                float d = cos(j);
+                float e = sin(A);
+                float f = sin(j);
+                float g = cos(A);
+                float h = d + 2;
+                float D = 1 / (c * h * e + f * g + 5);
+                float l = cos(i);
+                float m = cos(B);
+                float n = sin(B);
+                float t = c * h * g - f * e;
+                int x = 40 + 30 * D * (l * h * m - t * n);
+                int y = 12 + 15 * D * (l * h * n + t * m);
+                int o = x + 80 * y;
+                int N = 8 * ((f * e - c * d * g) * m - c * d * e - f * g - l * d * n);
+                if (22 &gt; y &amp;&amp; y &gt; 0 &amp;&amp; x &gt; 0 &amp;&amp; 80 &gt; x &amp;&amp; D &gt; z[o]) {
+                    z[o] = D;
+                    b[o] = ".,-~:;=!*#$@"[N &gt; 0 ? N : 0];
+                }
+            }
+        }
+        printf("\x1b[H");
+        for (k = 0; k &lt; 1761; k++) {
+            putchar(k % 80 ? b[k] : 10);
+            A += 0.00004;
+            B += 0.00002;
+        }
+        usleep(10000);
+        system("cls");
+    }
+    return 0;
+}</code>
+</pre>
+<br><div id="gitalk-container" style="width:100%;background-color:#f1f1f0;"></div>
+<script src="https://cdn.jsdelivr.net/gh/SoftOSDev/prism/prism.js"></script>
+<script>
+var gitalk = new Gitalk({
+        clientID: 'f9c47400d6592a2167da',
+        clientSecret: '6c2dffbf7a912d81e375715aefedfffd5c1eb10a',
+        repo: 'handing',
+        owner: 'SoftOSDev',
+        admin: ['SoftOSDev', 'Xihao-Hua'],
+        id: location.pathname,
+        distractionFreeMode: true
+      });
+      gitalk.render('gitalk-container');
+
+      var language = navigator.language || navigator.userLanguage;
+      var intro = document.getElementsByClassName('hero-intro')[0];
+      var beginBtn = document.getElementsByClassName('btn-begin')[0];
+      var demo = document.getElementsByClassName('demo')[0];
+      if (language === 'zh-TW') {
+        intro.innerText = '一個基於 Github Issue 和 Preact 開發的評論插件';
+        beginBtn.innerText = '開始使用';
+      } else if (!~language.indexOf('zh')) {
+        intro.innerText = 'A modern comment component based on Github Issue and Preact';
+        beginBtn.innerText = 'GET STARTED';
+        demo.innerText = '';
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link href="../picture/favoricon.ico" rel="shortcut icon">
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="../resource/main.js"></script>
+<title>System</title>
+<style>@font-face {
+   font-family: "qj"; 
+   src:url("../qj.ttf"); 
+   font-weight: normal;
+   font-style: normal;
+ }</style>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="../resource/main.css" title="style">
+<script scr="../resource/main.js"></script>
+<div class='container'>
+<div class="header">
+<h2>System</h2>
+</div>
+<div class="topnav">
+   <a href="../software/">SoftWare</a>
+   <a href="../system/">System</a>
+   <a href="../open-source/">Open-Source</a>
+   <a href="../community/">Community</a>
+   <a href="../programming/">Programming</a>
+   <a href="../home/">Home</a>
+</div>
+<div class="column middle">
+<p><b>Linux is a very powerful system, and its biggest advantage is open source</b></p>
+<p>Please see "Domestic Operating System Market Share in the Fourth Quarter of 2018"</p>
+<br><br>
+<div id="container" style="width: 550px; height: 400px; margin: 0 auto;background-color:#f1f1f0;"></div>
+<script language="JavaScript">
+$(document).ready(function() {  
+   var chart = {
+       plotBackgroundColor: null,
+       plotBorderWidth: null,
+       plotShadow: false
+   };
+   var title = {  
+
+      text: 'Domestic Operating System Market Share in the Fourth Quarter of 2018'   
+   };    
+   var tooltip = {
+      pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+   };
+   var plotOptions = {
+      pie: {
+         allowPointSelect: true,
+         cursor: 'pointer',
+         dataLabels: {
+            enabled: true,
+            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+            style: {
+               color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+            }
+         }
+      }
+   };
+   var series= [{
+      type: 'pie',
+      name: 'OS ratio',
+      data: [
+         ['Windows',   93.11],
+         ['Linux',     3.58],
+         ['macOS',    2.84],
+         ['UNIX',     0.1],
+         ['Others',   0.47]
+      ]
+   }];     
+      
+   var json = {};   
+   json.chart = chart; 
+   json.title = title;     
+   json.tooltip = tooltip;  
+   json.series = series;
+   json.plotOptions = plotOptions;
+   $('#container').highcharts(json); 
+});
+</script>
+<br><br><br>
+<p>Open source Linux, we can design the system according to our preferences</p>
+<p>E.g <a href="../link.htm?ubuntu">Ubuntu</a>,<a href="../link.htm?kali">Kali Linux</a> and <a href="../link.htm?freebsd">FreeBSD</a></p>
+<br>
+<p>And the operating system of your own design is even more interesting</p>
+<br><br>
+<div id="about">
+<p><b>Xihao OS</b></p>
+<p>Based on <a href="../link.htm?centos">CentOS Minimal</a> build</p>
+<br>
+<p>The desktop environment is <a href="../link.htm?xfce">Xfce</a>。</p>
+<br><br>
+<p><b>Handing OS</b></p>
+<p>Based on <a href="../link.htm?ubuntu">Ubuntu 20.04</a> build</p>
+<br>
+<p>The desktop environment is <a href="../link.htm?gnome">Gnome</a>。</p>
+</div>  
+</div>
+<div class="column side">
+<div id="download">
+   <h3>  Download</h3>
+  <br><br>
+<p><button class="button button2" onclick="HandingOS()">HandingOS</button></p><br><br>
+<p><button class="button button2" onclick="XihaoOS()">XihaoOS</button></p><br><br>
+</div></div>
+<div class="footer">
+<h3><a href="https://github.com/SoftOSDev"><img src="https://github.githubassets.com/pinned-octocat.svg"  alt="Github" width="50" height="50" /> </a>
+<a href="https://facebook.com/SoftOSDev"><img src="https://i1.wp.com/christcentergj.com/wp-content/uploads/2015/04/facebook-logo-png.png?ssl=1"  alt="Facebook" width="50" height="50" /> </a>
+<a href="https://twitter.com/hxh7197"><img src="https://ts1.cn.mm.bing.net/th/id/R-C.3f7189662f19f8318fc75252deee723a?rik=Qa956Np1tp8Zcg&riu=http%3a%2f%2f1000logos.net%2fwp-content%2fuploads%2f2017%2f06%2fTwitter-Logo.png&ehk=6ekNd2ZmhpvFDGRZF19QcumP9fb8pZRkwrbFbK%2bpULA%3d&risl=&pid=ImgRaw&r=0"  alt="Twitter" width="50" height="50" /> </a>
+</h3>
+<a href="/"><p><font color="blue">Copyright &#169 2022-2023 Handing Co.,lnc</p></a>
+</div> </div>
+</body>
+</html>
